@@ -20,9 +20,12 @@ typedef struct
 
 #define ROW_SIZE sizeof(PersonRow)
 #define MAX_ROWS HEAP_SIZE / sizeof(PersonRow)
-
+// TODO: extract table_heap.h
+// TODO: implement leaf_nodes.h
+// TODO: implement b_tree
 // TODO: extract to elixir-style
-
+// Generics would be
+// add_row(table_heap_config, table_heap) :: char *, allow client table to wrap
 Person * add_row(unsigned int age)
 {
     char * heap_ptr = heap;
