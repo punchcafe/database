@@ -63,6 +63,26 @@ void delete_row(unsigned int row_number)
 
 Person * checker [50];
 
+
+#define NODE_LEAF_SIZE 20
+
+/*
+Implementation thoughts.
+Have a maximum number of nodes. Whenever a new value is added, create a new node for it, until 
+you reach the max. Once maxed, start filling in nodeleaves in order. Whenever one is full, 
+split in into two new nodeleaves.
+*/
+struct NodeLeaf;
+
+typedef struct {
+    unsigned int size;
+    PersonRow * rows [NODE_LEAF_SIZE];
+    struct NodeLeaf * next;
+    struct NodeLeaf * previous;
+} NodeLeaf;
+
+
+
 int main()
 {
     Person * result = (Person *)0x01;
